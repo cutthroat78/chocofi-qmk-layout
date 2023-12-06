@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *           ┌───┐                   ┌───┐
       *           │GUI├───┐           ┌───┤Alt│
       *           └───┤Bsp├───┐   ┌───┤Ent├───┘
-      *               └───┤   │   │   ├───┘
+      *               └───┤SPC│   │SPC├───┘
       *                   └───┘   └───┘
       */
     [0] = LAYOUT_split_3x5_3(
