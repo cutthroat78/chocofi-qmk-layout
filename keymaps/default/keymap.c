@@ -1,10 +1,8 @@
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 
-enum chocofi_layers {
-  _MAIN,
-  _QWERTY
-};
+#define _HALMAK 0
+#define _QWERTY 1
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -21,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               └───┤DEL│   │ OS├───┘
       *                   └───┘   └───┘
       */
-    [_MAIN] = LAYOUT_split_3x5_3(
+    [_HALMAK] = LAYOUT_split_3x5_3(
         KC_W,    KC_L,    KC_R,    KC_B,    KC_Z,                              KC_COLN,    KC_Q,    KC_U,    KC_D,    KC_J,
         KC_S,    KC_H,    KC_N,    KC_T,    KC_COMMA,                          KC_DOT,     KC_A,    KC_E,    KC_O,    KC_I,
         KC_F,    KC_M,    KC_V,    KC_C,    KC_SLASH,                          KC_G,       KC_P,    KC_X,    KC_K,    KC_Y,
@@ -49,10 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-const key_override_t colon_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_COLN, KC_SCLN, _MAIN);
-const key_override_t comma_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMMA, KC_LPRN, _MAIN);
-const key_override_t dot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_RPRN, _MAIN);
-const key_override_t slash_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_SLASH, KC_BACKSLASH, _MAIN);
+const key_override_t colon_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_COLN, KC_SCLN, _HALMAK);
+const key_override_t comma_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_COMMA, KC_LPRN, _HALMAK);
+const key_override_t dot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_RPRN, _HALMAK);
+const key_override_t slash_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_SLASH, KC_BACKSLASH, _HALMAK);
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
