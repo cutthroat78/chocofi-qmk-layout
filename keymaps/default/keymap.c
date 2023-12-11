@@ -33,11 +33,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
-      *           ┌───┐                   ┌───┐
-      *           │ESC├───┐           ┌───┤BSP│
-      *           └───┤SHT├───┐   ┌───┤SPC├───┘
-      *               └───┤ENT│   │ OS├───┘
-      *                   └───┘   └───┘
       */
     [_QWERTY] = LAYOUT_split_3x5_3(
         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
@@ -61,5 +56,12 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&slash_key_override,
 	&delete_key_override,
 	NULL // Null terminate the array of overrides!
+};
+
+const uint16_t PROGMEM halmak_layer_combo[] = {KC_T, KC_A, COMBO_END};
+const uint16_t PROGMEM qwerty_layer_combo[] = {KC_T, KC_E, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(halmak_layer_combo, TO(_HALMAK)),
+    COMBO(qwerty_layer_combo, TO(_QWERTY)),
 };
 

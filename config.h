@@ -6,5 +6,7 @@
 #define MATRIX_ROWS  8
 #define MATRIX_COLS  6
 
+#define COMBO_ONLY_FROM_LAYER 0
+
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
