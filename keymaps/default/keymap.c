@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
       * │END│PGU│PGD│HME│   │       │   │HME│PGD│PGU│END│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │➡  │⬆  │ ⬇ │⬅  │   │       │   │ ⬅ │ ⬇ │ ⬆ │ ➡ │
+      * │ ⬅ │⬆  │ ⬇ │ ➡ │   │       │   │ ⬅ │ ⬇ │ ⬆ │ ➡ │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │   │   │   │   │   │       │   │   │   │   │   │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       */
     [_NAV] = LAYOUT_split_3x5_3(
         KC_END,    KC_PAGE_UP, KC_PAGE_DOWN, KC_HOME, KC_TRNS,                               KC_TRNS, KC_HOME, KC_PAGE_DOWN, KC_PAGE_UP, KC_END,
-        KC_RIGHT,  KC_UP,      KC_DOWN,      KC_LEFT, KC_TRNS,                               KC_TRNS, KC_LEFT, KC_DOWN,      KC_UP,      KC_RIGHT,
+        KC_LEFT,   KC_UP,      KC_DOWN,      KC_RIGHT, KC_TRNS,                               KC_TRNS, KC_LEFT, KC_DOWN,      KC_UP,      KC_RIGHT,
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS,    KC_TRNS,
                                              KC_TRNS, KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS
     )
