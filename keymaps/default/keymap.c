@@ -61,15 +61,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
       * │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │       │ + │ 4 │ 5 │ 6 │/ *│
+      * │   │   │   │   │   │       │+ =│ 4 │ 5 │ 6 │/ *│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │   │   │   │   │   │       │ - │ 1 │ 2 │ 3 │ . │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       */
     [_NUMBERS] = LAYOUT_split_3x5_3(
-        KC_HOME,   KC_PAGE_UP, KC_PAGE_DOWN, KC_END,   KC_TRNS,                               KC_TRNS, KC_HOME, KC_PAGE_DOWN, KC_PAGE_UP, KC_END,
-        KC_LEFT,   KC_UP,      KC_DOWN,      KC_RIGHT, KC_TRNS,                               KC_TRNS, KC_LEFT, KC_DOWN,      KC_UP,      KC_RIGHT,
-        KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS,    KC_TRNS,
+        KC_1,      KC_2,       KC_3,         KC_4,     KC_5,                                  KC_6,    KC_7,    KC_8, KC_9, KC_0,
+        KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_PPLS, KC_4,    KC_5, KC_6, KC_SLASH,
+        KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_MINS, KC_1,    KC_2, KC_3, KC_DOT,
                                              KC_TRNS,  KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS
     )
 };
@@ -79,6 +79,7 @@ const key_override_t comma_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC
 const key_override_t dot_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_DOT, KC_RPRN, ~_HALMAK);
 const key_override_t slash_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_SLASH, KC_BACKSLASH, ~_HALMAK);
 const key_override_t numbers_slash_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_SLASH, KC_KP_ASTERISK, ~_NUMBERS);
+const key_override_t numbers_plus_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_PPLS, KC_EQUAL, ~_NUMBERS);
 const key_override_t delete_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_BSPC, KC_DELETE, ~_HALMAK | ~_NAV | ~_QWERTY | ~_NUMBERS);
 
 // This globally defines all key overrides to be used
@@ -88,6 +89,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&dot_key_override,
 	&slash_key_override,
 	&numbers_slash_key_override,
+	&numbers_plus_key_override,
 	&delete_key_override,
 	NULL // Null terminate the array of overrides!
 };
