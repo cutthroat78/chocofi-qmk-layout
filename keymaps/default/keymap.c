@@ -4,7 +4,7 @@
 #define _HALMAK 0
 #define _QWERTY 1
 #define _NAV 2
-#define _NUMBERS 3
+#define _ANKI 3
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -71,6 +71,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_PPLS, KC_4,    KC_5, KC_6, KC_PSLS,
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_MINS, KC_1,    KC_2, KC_3, KC_DOT,
                                              KC_TRNS,  KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+     /*
+      * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
+      * │ A │ E │ B │ D │   │       │   │ D │ B │ E │ A │
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │ 4 │ 3 │ 2 │ 1 │ Y │       │ Y │ 1 │ 2 │ 3 │ 4 │
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │   │   │   │   │ / │       │ / │   │   │   │   │
+      * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
+      *           ┌───┐                   ┌───┐
+      *           │   ├───┐           ┌───┤   │
+      *           └───┤SPC├───┐   ┌───┤SPC├───┘
+      *               └───┤UNDO   │UNDO───┘
+      *                   └───┘   └───┘
+      */
+    [_ANKI] = LAYOUT_split_3x5_3(
+        KC_A,   KC_E,    KC_B,      KC_D,  KC_TRNS,                                            KC_TRNS, KC_D, KC_B,      KC_E,    KC_A,
+        KC_4,   KC_3,    KC_2,      KC_1,  KC_Y,                                               KC_Y, KC_1, KC_2,      KC_3,    KC_4,
+        KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_SLASH,                               KC_SLASH, KC_TRNS, KC_TRNS,      KC_TRNS,    KC_TRNS,
+                                             KC_TRNS,  KC_TRNS, LCTL(z),             LCTL(z), KC_TRNS, KC_TRNS
     )
 };
 
