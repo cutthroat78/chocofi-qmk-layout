@@ -24,8 +24,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       */
     [_HALMAK] = LAYOUT_split_3x5_3(
         KC_W,    KC_L,    KC_R,    KC_B,         KC_Z,                                KC_COLN, KC_Q,    KC_U,    KC_D,    KC_J,
-        KC_S,    KC_H,    KC_N,    KC_T,         MT(MO(_NAV), KC_COMMA),                            KC_DOT,  KC_A,    KC_E,    KC_O,    KC_I,
-        KC_F,    KC_M,    KC_V,    KC_C,         MT(MO(_NUM), KC_SLASH),                            KC_G,    KC_P,    KC_X,    KC_K,    KC_Y,
+        KC_S,    KC_H,    KC_N,    KC_T,         LT(_NAV, KC_COMMA),                            KC_DOT,  KC_A,    KC_E,    KC_O,    KC_I,
+        KC_F,    KC_M,    KC_V,    KC_C,         LT(_NUM, KC_SLASH),                            KC_G,    KC_P,    KC_X,    KC_K,    KC_Y,
                                    KC_LEFT_GUI,  KC_LEFT_SHIFT, MT(MOD_LCTL, KC_ENT),          KC_BSPC, KC_SPC,  MT(MOD_LALT, KC_ESC)
     ),
     /*
