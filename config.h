@@ -10,3 +10,5 @@
 
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
+
+#define MK_KINETIC_SPEED

@@ -4,8 +4,9 @@
 #define _HALMAK 0
 #define _QWERTY 1
 #define _NAV 2
-#define _NUM 3
-#define _ANKI 4
+#define _MOUSE 3
+#define _NUM 4
+#define _ANKI 5
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -23,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_HALMAK] = LAYOUT_split_3x5_3(
-        KC_W,    KC_L,    KC_R,    KC_B,         KC_Z,                                KC_COLN, KC_Q,    KC_U,    KC_D,    KC_J,
+        KC_W,    KC_L,    KC_R,    KC_B,         LT(_MOUSE, KC_Z),                                KC_COLN, KC_Q,    KC_U,    KC_D,    KC_J,
         KC_S,    KC_H,    KC_N,    KC_T,         LT(_NAV, KC_COMMA),                            KC_DOT,  KC_A,    KC_E,    KC_O,    KC_I,
         KC_F,    KC_M,    KC_V,    KC_C,         LT(_NUM, KC_SLASH),                            KC_G,    KC_P,    KC_X,    KC_K,    KC_Y,
                                    KC_LEFT_GUI,  KC_LEFT_SHIFT, MT(MOD_LCTL, KC_ENT),          KC_BSPC, KC_SPC,  MT(MOD_LALT, KC_ESC)
@@ -72,6 +73,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_0, KC_4,    KC_5, KC_6, KC_PSLS,
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_MINS, KC_1,    KC_2, KC_3, KC_DOT,
                                              KC_TRNS,  KC_TRNS, KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+    /*
+      * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
+      * │HME│PGU│PGD│END│   │       │   │HME│PGD│PGU│END│
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │ ⬅ │⬆  │ ⬇ │ ➡ │   │       │   │ ⬅ │ ⬇ │ ⬆ │ ➡ │
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │   │   │   │   │   │       │   │   │   │   │   │
+      * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
+      */
+    [_MOUSE] = LAYOUT_split_3x5_3(
+        KC_HOME,   KC_PAGE_UP, KC_PAGE_DOWN, KC_END,   KC_TRNS,                               KC_TRNS, KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3, KC_TRNS,
+        KC_LEFT,   KC_UP,      KC_DOWN,      KC_RIGHT, KC_TRNS,                               KC_TRNS, KC_MS_LEFT, KC_MS_DOWN,      KC_MS_UP,      KC_MS_RIGHT,
+        KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_MS_WH_LEFT, KC_MS_WH_DOWN,      KC_MS_WH_UP,    KC_MS_WH_RIGHT,
+                                             KC_TRNS,  KC_TRNS, KC_TRNS,             KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
