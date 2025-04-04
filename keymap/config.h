@@ -8,9 +8,9 @@
 
 #define COMBO_ONLY_FROM_LAYER 0
 
+#define TAPPING_TOGGLE 2
+
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 
 #define MK_KINETIC_SPEED
-
-#define TAPPING_TOGGLE 2

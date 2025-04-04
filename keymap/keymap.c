@@ -7,7 +7,7 @@
 #define _MOUSE 3
 #define _NUM 4
 #define _GAMING 5
-#define _GAMINGARROWS 6
+#define _GAMING_ARROWS 6
 #define _ANKI 7
 
 
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
                                    KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
     ),
-    [_GAMINGARROWS] = LAYOUT_split_3x5_3(
+    [_GAMING_ARROWS] = LAYOUT_split_3x5_3(
         KC_TAB,    KC_Q,    KC_UP,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
         KC_LEFT_SHIFT,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    TT(_GAMING),
         KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
@@ -135,7 +135,7 @@ const key_override_t numbers_plus_key_override = ko_make_with_layers(MOD_MASK_SH
 const key_override_t delete_key_override = ko_make_with_layers(MOD_MASK_SHIFT, KC_BSPC, KC_DELETE, ~_HALMAK | ~_NAV | ~_QWERTY | ~_NUM);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
+const key_override_t *key_overrides[] = {
 	&colon_key_override,
 	&comma_key_override,
 	&dot_key_override,
@@ -143,7 +143,6 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 	&numbers_slash_key_override,
 	&numbers_plus_key_override,
 	&delete_key_override,
-	NULL // Null terminate the array of overrides!
 };
 
 const uint16_t PROGMEM nav_layer_combo[] = {KC_COLN, KC_S, COMBO_END};
