@@ -6,7 +6,10 @@
 #define _NAV 2
 #define _MOUSE 3
 #define _NUM 4
-#define _ANKI 5
+#define _GAMING 5
+#define _GAMING_ARROWS 6
+#define _ANKI 7
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -89,6 +92,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,   KC_TRNS,    KC_TRNS,      KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_MS_WH_LEFT, KC_MS_WH_DOWN,      KC_MS_WH_UP,    KC_MS_WH_RIGHT,
                                              KC_TRNS,  KC_TRNS, KC_TRNS,             KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
     ),
+    [_GAMING] = LAYOUT_split_3x5_3(
+        KC_TAB,    KC_Q,    KC_W,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
+        KC_LEFT_SHIFT,    KC_A,    KC_S,    KC_D,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    TT(_GAMING_ARROWS),
+        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
+                                   KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
+    ),
+    [_GAMING_ARROWS] = LAYOUT_split_3x5_3(
+        KC_TAB,    KC_Q,    KC_UP,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
+        KC_LEFT_SHIFT,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    TT(_GAMING),
+        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
+                                   KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
+    ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
       * │ A │ E │ B │ D │   │       │   │ D │ B │ E │ A │
@@ -133,6 +148,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 
 const uint16_t PROGMEM nav_layer_combo[] = {KC_COLN, KC_S, COMBO_END};
 const uint16_t PROGMEM numbers_layer_combo[] = {KC_COLN, KC_W, COMBO_END};
+const uint16_t PROGMEM gaming_layer_combo[] = {KC_COLN, KC_F, COMBO_END};
 
 const uint16_t PROGMEM halmak_layer_combo[] = {KC_DOT, KC_S, COMBO_END};
 const uint16_t PROGMEM qwerty_layer_combo[] = {KC_DOT, KC_W, COMBO_END};
@@ -141,6 +157,7 @@ const uint16_t PROGMEM anki_layer_combo[] = {KC_DOT, KC_F, COMBO_END};
 combo_t key_combos[] = {
     COMBO(nav_layer_combo, TO(_NAV)),
     COMBO(numbers_layer_combo, TO(_NUM)),
+    COMBO(gaming_layer_combo, TO(_GAMING)),
     COMBO(halmak_layer_combo, TO(_HALMAK)),
     COMBO(qwerty_layer_combo, TO(_QWERTY)),
     COMBO(anki_layer_combo, TO(_ANKI)),

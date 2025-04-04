@@ -12,3 +12,5 @@
 #define SOFT_SERIAL_PIN D2
 
 #define MK_KINETIC_SPEED
+
+#define TAPPING_TOGGLE 2
