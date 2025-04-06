@@ -98,10 +98,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
     ),
     [_GAMING_ARROWS] = LAYOUT_split_3x5_3(
-        KC_TAB,    KC_Q,    KC_UP,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
-        KC_LEFT_SHIFT,    KC_LEFT,    KC_DOWN,    KC_RIGHT,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    OSL(_GAMING),
-        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    OSL(_HALMAK),
-                                   KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
+        KC_TRNS,    KC_TRNS,    KC_UP,    KC_TRNS,         KC_TRNS,                                KC_TRNS, KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+        KC_TRNS,    KC_LEFT,    KC_DOWN,    KC_RIGHT,         KC_TRNS,                            KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+        KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,         KC_TRNS,                            KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+                                   KC_TRNS,  KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS,  KC_TRNS
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -147,7 +147,6 @@ const key_override_t *key_overrides[] = {
 const uint16_t PROGMEM nav_layer_combo[] = {KC_COLN, KC_S, COMBO_END};
 const uint16_t PROGMEM numbers_layer_combo[] = {KC_COLN, KC_W, COMBO_END};
 const uint16_t PROGMEM gaming_layer_combo[] = {KC_COLN, KC_F, COMBO_END};
-
 const uint16_t PROGMEM halmak_layer_combo[] = {KC_DOT, KC_S, COMBO_END};
 const uint16_t PROGMEM qwerty_layer_combo[] = {KC_DOT, KC_W, COMBO_END};
 const uint16_t PROGMEM anki_layer_combo[] = {KC_DOT, KC_F, COMBO_END};
