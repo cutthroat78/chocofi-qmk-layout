@@ -10,7 +10,6 @@
 #define _GAMING_ARROWS 6
 #define _ANKI 7
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -30,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_W,    KC_L,    KC_R,    KC_B,         LT(_MOUSE, KC_Z),                                KC_COLN, KC_Q,    KC_U,    KC_D,    KC_J,
         KC_S,    KC_H,    KC_N,    KC_T,         LT(_NAV, KC_COMMA),                            KC_DOT,  KC_A,    KC_E,    KC_O,    KC_I,
         KC_F,    KC_M,    KC_V,    KC_C,         LT(_NUM, KC_SLASH),                            KC_G,    KC_P,    KC_X,    KC_K,    KC_Y,
-                                   KC_LEFT_GUI,  KC_LEFT_SHIFT, MT(MOD_LCTL, KC_ENT),          KC_BSPC, KC_SPC,  MT(MOD_LALT, KC_ESC)
+                                   OSM(MOD_LGUI),  OSM(MOD_LSFT), MT(MOD_LCTL, KC_ENT),          KC_BSPC, KC_SPC,  MT(MOD_LALT, KC_ESC)
     ),
     /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -94,14 +93,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_GAMING] = LAYOUT_split_3x5_3(
         KC_TAB,    KC_Q,    KC_W,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
-        KC_LEFT_SHIFT,    KC_A,    KC_S,    KC_D,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    TT(_GAMING_ARROWS),
-        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
+        KC_LEFT_SHIFT,    KC_A,    KC_S,    KC_D,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    OSL(_GAMING_ARROWS),
+        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    OSL(_HALMAK),
                                    KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
     ),
     [_GAMING_ARROWS] = LAYOUT_split_3x5_3(
         KC_TAB,    KC_Q,    KC_UP,    KC_E,         KC_R,                                KC_ESC, KC_AUDIO_VOL_DOWN,    KC_AUDIO_MUTE,    KC_AUDIO_VOL_UP,    KC_NO,
-        KC_LEFT_SHIFT,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    TT(_GAMING),
-        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    TT(_HALMAK),
+        KC_LEFT_SHIFT,    KC_LEFT,    KC_DOWN,    KC_RIGHT,         KC_F,                            KC_ENTER,  KC_NO,    KC_NO,    KC_NO,    OSL(_GAMING),
+        KC_LCTL,    KC_Z,    KC_X,    KC_C,         KC_V,                            KC_NO,    KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    OSL(_HALMAK),
                                    KC_LALT,  KC_SPC, KC_G,          KC_NO, KC_NO,  KC_NO
     ),
      /*
@@ -154,10 +153,10 @@ const uint16_t PROGMEM qwerty_layer_combo[] = {KC_DOT, KC_W, COMBO_END};
 const uint16_t PROGMEM anki_layer_combo[] = {KC_DOT, KC_F, COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(nav_layer_combo, TO(_NAV)),
-    COMBO(numbers_layer_combo, TO(_NUM)),
-    COMBO(gaming_layer_combo, TO(_GAMING)),
+    COMBO(nav_layer_combo, TG(_NAV)),
+    COMBO(numbers_layer_combo, TG(_NUM)),
+    COMBO(gaming_layer_combo, TG(_GAMING)),
     COMBO(halmak_layer_combo, TO(_HALMAK)),
-    COMBO(qwerty_layer_combo, TO(_QWERTY)),
-    COMBO(anki_layer_combo, TO(_ANKI)),
+    COMBO(qwerty_layer_combo, TG(_QWERTY)),
+    COMBO(anki_layer_combo, TG(_ANKI)),
 };

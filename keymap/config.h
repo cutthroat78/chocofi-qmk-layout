@@ -8,7 +8,7 @@
 
 #define COMBO_ONLY_FROM_LAYER 0
 
-#define TAPPING_TOGGLE 2
+#define ONESHOT_TAP_TOGGLE 2
 
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
